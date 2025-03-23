@@ -4,7 +4,7 @@
 #include <cmath>
 
 unsigned int faStr1(const char *str) {
-   unsigned int sum = 0;
+    unsigned int sum = 0;
     bool foundNumber = false;
     bool isWord = false;
 
@@ -92,5 +92,6 @@ unsigned int faStr3(const char *str) {
     if (sumWords == 0) {
         return 0;
     }
-    return static_cast<unsigned int>(std::round(static_cast<double>(length) / sumWords));
+    unsigned int averageLength = std::round(static_cast<double>(length) / sumWords);
+    return averageLength;
 }
