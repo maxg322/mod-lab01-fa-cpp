@@ -10,22 +10,22 @@ unsigned int faStr1(const char *str) {
 
     while (*str) {
         if (!isspace(*str)) {
-            if (!isWord) {  
+            if (!isWord) {
                 isWord = true;
                 foundNumber = false;
             }
             if (isdigit(*str)) {
                 foundNumber = true;
             }
-        } else {  
-            if (isWord) {  
-                if (!foundNumber) {  
-                    sum++;  
+        } else {
+            if (isWord) {
+                if (!foundNumber) {
+                    sum++;
                 }
-                isWord = false;  
+                isWord = false;
             }
         }
-        str++;  
+        str++;
     }
     if (isWord && !foundNumber) {
         sum++;
@@ -40,7 +40,7 @@ unsigned int faStr2(const char *str) {
 
     while (*str) {
         if (!isspace(*str)) {
-            if (!isWord) {  
+            if (!isWord) {
                 isWord = true;
                 isSuccessful = isupper(*str);
             } else {
@@ -70,14 +70,14 @@ unsigned int faStr3(const char *str) {
 
     while (*str) {
         if (!isspace(*str)) {
-            if (!isWord) {  
+            if (!isWord) {
                 isWord = true;
                 currentLength = 1;
             } else {
                 currentLength++;
             }
-        } else {  
-            if (isWord) {  
+        } else {
+            if (isWord) {
                 length += currentLength;
                 sumWords++;
                 isWord = false;
@@ -92,6 +92,6 @@ unsigned int faStr3(const char *str) {
     if (sumWords == 0) {
         return 0;
     }
-    unsigned int averageLength = std::round(static_cast<double>(length) / sumWords);
+    int averageLength = std::round(static_cast<double>(length) / sumWords);
     return averageLength;
 }
